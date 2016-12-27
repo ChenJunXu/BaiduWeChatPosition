@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--标题栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#393A3E"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_search_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="14dp"
+            android:src="@drawable/back"/>
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="搜索地点"
+            android:textColor="#F0F1F2"
+            android:textColorHint="#F0F1F2"
+            android:textSize="14sp"/>
+
+        <RelativeLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_search_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tv_selector"
+                android:gravity="center"
+                android:paddingBottom="4dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="4dp"
+                android:text="搜索"
+                android:textColor="#ffffff"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_locator_search_position"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FEFFFF"
+            android:divider="#F0F1F2"
+            android:dividerHeight="1dp">
+        </ListView>
+
+        <ProgressBar
+            android:id="@+id/pb_location_search_load_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>
