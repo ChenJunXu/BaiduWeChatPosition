@@ -6,17 +6,23 @@
     <!--标题栏-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#393A3E"
+        android:layout_height="@dimen/ActionBarHeight"
+        android:background="@color/actionBarColor"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/img_search_back"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="14dp"
-            android:src="@drawable/back"/>
+        <FrameLayout
+            android:id="@+id/fl_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/actionbar_img_selector">
+
+            <ImageView
+                android:layout_width="@dimen/ActionBarHeight"
+                android:layout_height="@dimen/ActionBarHeight"
+                android:padding="14dp"
+                android:src="@drawable/back"/>
+        </FrameLayout>
 
         <EditText
             android:id="@+id/et_search"
@@ -25,42 +31,44 @@
             android:layout_weight="1"
             android:background="@null"
             android:hint="搜索地点"
-            android:textColor="#F0F1F2"
-            android:textColorHint="#F0F1F2"
-            android:textSize="14sp"/>
+            android:textColor="@color/white"
+            android:textColorHint="@color/hintTextColor"
+            android:textSize="16sp"/>
 
         <RelativeLayout
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/ActionBarHeight"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/tv_search_send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/tv_selector"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/actionbar_tv_selector"
                 android:gravity="center"
-                android:paddingBottom="4dp"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp"
-                android:paddingTop="4dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
                 android:text="搜索"
-                android:textColor="#ffffff"
-                android:textSize="12sp"/>
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
         </RelativeLayout>
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/bgColor">
 
         <ListView
             android:id="@+id/lv_locator_search_position"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FEFFFF"
-            android:divider="#F0F1F2"
+            android:divider="@color/divideColor"
             android:dividerHeight="1dp">
         </ListView>
 

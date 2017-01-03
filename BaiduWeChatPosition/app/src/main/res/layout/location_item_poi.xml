@@ -2,25 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#FEFFFF"
-              android:orientation="horizontal"
               android:gravity="center"
+              android:orientation="horizontal"
+              android:background="@drawable/listview_item_selector"
               android:paddingBottom="8dp"
               android:paddingTop="8dp">
 
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/tv_poi_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:textColor="#0B0F12"
-            android:singleLine="true"
             android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/positionNameColor"
             android:textSize="16sp"/>
 
         <TextView
@@ -30,12 +30,11 @@
             android:layout_below="@id/tv_poi_name"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
-            android:textColor="#999999"
-            android:singleLine="true"
             android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/positionAddressColor"
             android:textSize="12sp"/>
     </RelativeLayout>
-
 
     <ImageView
         android:id="@+id/img_cur_point"

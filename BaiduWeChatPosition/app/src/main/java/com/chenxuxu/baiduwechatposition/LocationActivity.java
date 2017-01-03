@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -103,8 +104,8 @@ public class LocationActivity extends Activity implements AdapterView.OnItemClic
     /**
      * 标题栏
      */
-    private ImageView img_back;
-    private ImageView img_search;
+    private FrameLayout fl_back;
+    private FrameLayout fl_search;
     private TextView tv_send;
 
     @Override
@@ -122,8 +123,8 @@ public class LocationActivity extends Activity implements AdapterView.OnItemClic
         lv_location_position = (ListView) findViewById(R.id.lv_location_position);
         pb_location_load_bar = (ProgressBar) findViewById(R.id.pb_location_load_bar);
         img_location_back_origin = (ImageView) findViewById(R.id.img_location_back_origin);
-        img_back = (ImageView) findViewById(R.id.img_back);
-        img_search = (ImageView) findViewById(R.id.img_search);
+        fl_back = (FrameLayout) findViewById(R.id.fl_back);
+        fl_search = (FrameLayout) findViewById(R.id.fl_search);
         tv_send = (TextView) findViewById(R.id.tv_send);
         bmapView = (MapView) findViewById(R.id.bmapView);
 
@@ -168,8 +169,8 @@ public class LocationActivity extends Activity implements AdapterView.OnItemClic
         // 注册监听
         lv_location_position.setOnItemClickListener(this);
         img_location_back_origin.setOnClickListener(this);
-        img_back.setOnClickListener(this);
-        img_search.setOnClickListener(this);
+        fl_back.setOnClickListener(this);
+        fl_search.setOnClickListener(this);
         tv_send.setOnClickListener(this);
     }
 
@@ -207,16 +208,16 @@ public class LocationActivity extends Activity implements AdapterView.OnItemClic
                             .location(mLoactionLatLng));
                 }
                 break;
-            case R.id.img_back:  //返回
+            case R.id.fl_back:  //返回
                 LocationActivity.this.finish();
                 break;
-            case R.id.img_search:  //查找
+            case R.id.fl_search:  //查找
                 Intent search_intent = new Intent(LocationActivity.this, SearchPositionActivity.class);
                 startActivityForResult(search_intent, REQUEST_CODE);
                 break;
             case R.id.tv_send:  //发送
                 Intent intent = new Intent();
-                intent.putExtra("position",mLocationValue);
+                intent.putExtra("position", mLocationValue);
                 setResult(RESULT_OK, intent);
                 LocationActivity.this.finish();
                 break;

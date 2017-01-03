@@ -1,8 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="ParentTheme">
+    </style>
+
+    <!--防止欢迎页面有闪一下的效果。-->
+    <style name="ParentTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 </resources>

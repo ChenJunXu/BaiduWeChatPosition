@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -58,7 +58,7 @@ public class SearchPositionActivity extends Activity implements AdapterView.OnIt
     /**
      * 返回
      */
-    private ImageView img_search_back;
+    private FrameLayout fl_search_back;
     /**
      * 发送
      */
@@ -78,7 +78,7 @@ public class SearchPositionActivity extends Activity implements AdapterView.OnIt
     private void initUI() {
         mContext = this;
         lv_locator_search_position = (ListView) findViewById(R.id.lv_locator_search_position);
-        img_search_back = (ImageView) findViewById(R.id.img_search_back);
+        fl_search_back = (FrameLayout) findViewById(R.id.fl_search_back);
         tv_search_send = (TextView) findViewById(R.id.tv_search_send);
         pb_location_search_load_bar = (ProgressBar) findViewById(R.id.pb_location_search_load_bar);
         et_search = (EditText) findViewById(R.id.et_search);
@@ -93,7 +93,7 @@ public class SearchPositionActivity extends Activity implements AdapterView.OnIt
 
         // 注册监听
         lv_locator_search_position.setOnItemClickListener(this);
-        img_search_back.setOnClickListener(this);
+        fl_search_back.setOnClickListener(this);
         tv_search_send.setOnClickListener(this);
     }
 
@@ -140,7 +140,7 @@ public class SearchPositionActivity extends Activity implements AdapterView.OnIt
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_search_back:
+            case R.id.fl_search_back:
                 SearchPositionActivity.this.finish();
                 break;
             case R.id.tv_search_send:
